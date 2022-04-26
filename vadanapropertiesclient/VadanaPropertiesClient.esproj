@@ -13,9 +13,7 @@
   <ItemGroup>
     <Folder Include="src\Components\" />
     <Folder Include="src\Initialize\" />
-    <Folder Include="src\api\" />
     <Folder Include="src\Styles\" />
-    <Folder Include="src\Views\" />
     <Folder Include="src\Routes\" />
   </ItemGroup>
   <!-- This target is copied from the ASP.NET SPA template in order to ensure node_modules are in place. -->
