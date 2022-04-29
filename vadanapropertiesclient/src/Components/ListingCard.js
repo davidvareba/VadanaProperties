@@ -2,7 +2,7 @@ import React from "react";
 import { CardImg } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-export default function ListingsCard({ card }) {
+export default function ListingCard({ card }) {
     <div>
         <div className="card" style={{ width: '18rem', margin: '10px' }}>
             <CardImg
@@ -40,6 +40,6 @@ export default function ListingsCard({ card }) {
     </div>
   );
 }
-RealtorsCard.propTypes = {
+ListingsCard.propTypes = {
     card: PropTypes.shape(PropTypes.obj),
 };
