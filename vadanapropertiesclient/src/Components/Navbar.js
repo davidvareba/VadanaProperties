@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { signOutUser } from '../Data/Auth';
 
 
 export default function Navbar()
