@@ -24,7 +24,7 @@ export default function ListingCard({ card }) {
                         checked={card.favorite ? 'checked' : ''}
                         onChange={handleChange}
                     />
-                    Like this Car?
+                    Like this Listing?
                 </label>
                 <div className="d-grid gap-2 mt-3">
                     <button

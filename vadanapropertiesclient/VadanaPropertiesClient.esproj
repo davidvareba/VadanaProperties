@@ -13,6 +13,7 @@
   <ItemGroup>
     <Folder Include="src\Initialize\" />
     <Folder Include="src\Data\" />
+    <Folder Include="src\NewFolder\" />
     <Folder Include="src\Routes\" />
   </ItemGroup>
   <!-- This target is copied from the ASP.NET SPA template in order to ensure node_modules are in place. -->

@@ -7,10 +7,8 @@ import CreateListings from '../Views/CreateListings';
 import EditListings from '../Views/EditListings';
 import FavoriteListings from '../Views/FavoriteListings';
 import ListingsDetails from '../Views/ListingsDetails';
-import Login from '../Views/Login';
 import NewRealtor from '../Views/NewAgent';
 import NewListing from '../Views/NewListing';
-import RealtorListing from '../Views/RealtorListing';
 import AllRealtors from '../Views/AllRealtors';
 
 export default function Routing() {
@@ -26,10 +24,8 @@ export default function Routing() {
                 <Route exact path="/editListings" element={<EditListings />} />
                 <Route exact path="/favoriteListings" element={<FavoriteListings />} />
                 <Route exact path="/listingsDetails" element={<ListingsDetails />} />
-                <Route exact path="/login" element={<Login />} />
                 <Route exact path="/newRealtor" element={<NewRealtor />} />
-                <Route exact path="/newListing" element={<NewListingt />} />
-                <Route exact path="/realtorListings" element={<RealtorListings />} />
+                <Route exact path="/newListing" element={<NewListing />} />
                 <Route exact path="/allRealtors" element={<AllRealtors />} />
             </Routes>
         </>
