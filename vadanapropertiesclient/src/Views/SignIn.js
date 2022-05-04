@@ -1,19 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Spinner } from 'reactstrap';
-import { signInUser } from '../api/auth';
+import { signInUser } from '../Data/Auth';
 
 export default function SignIn({ user }) {
     return (
         <>
-            {user === null ? (
-                <div className="text-center">
-                    <Spinner
-                        style={{ width: '10rem', height: '10rem' }}
-                        color="warning"
-                    />
-                </div>
-            ) : (
                 <div className="sign-in mt-5" align="center">
                     <p>
                         <button
@@ -25,7 +16,7 @@ export default function SignIn({ user }) {
                         </button>
                     </p>
                 </div>
-            )}
+            
         </>
     );
 }

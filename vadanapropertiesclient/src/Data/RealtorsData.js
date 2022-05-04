@@ -1,16 +1,20 @@
 import axios from 'axios';
 
-const baseURL = "https://localhost:7013/api/Realtors";
+const baseURL = "https://localhost:7013/api";
 
 const getAllRealtors = () => new Promise((resolve, reject) => {
-    axios.get(`${baseURL}`)
+    const token = sessionStorage.getItem("idToken");
+
+    axios.get(`${baseURL}/Realtors`, {
+        headers:{Authorization:"Bearer " + token }
+    })
         .then((response) => resolve(Object.values(response.data)))
         .catch(reject);
 });
 
 //current return type is object, may need to be updated later depending on usage
 const getRealtorById = (id) => new Promise((resolve, reject) => {
-    axios.get(`${baseURL}/Agents/${id}`)
+    axios.get(`${baseURL}/Realtors/${id}`)
         .then((response) => resolve(response.data))
         .catch(reject);
 });
