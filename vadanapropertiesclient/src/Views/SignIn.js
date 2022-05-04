@@ -6,7 +6,7 @@ export default function SignIn({ user }) {
     return (
         <>
                 <div className="sign-in mt-5" align="center">
-                    <p>
+                    
                         <button
                             type="button"
                             className="btn btn-success"
@@ -14,7 +14,7 @@ export default function SignIn({ user }) {
                         >
                             Sign In
                         </button>
-                    </p>
+                   
                 </div>
             
         </>

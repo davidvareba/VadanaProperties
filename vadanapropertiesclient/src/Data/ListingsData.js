@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://localhost:7013/api/Listings";
+const baseUrl = "https://localhost:7013/api";
 
 const getListings = () => new Promise((resolve, reject) => {
     axios
