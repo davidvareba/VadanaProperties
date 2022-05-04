@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using VadanaProperties.Repositories;
 using VadanaProperties.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VadanaProperties.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class RealtorsController : ControllerBase
     {
         private readonly IRealtorsRepository _realtorRepo;

@@ -1,3 +1,7 @@
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using VadanaProperties.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +17,25 @@ builder.Services.AddCors(options =>
                            policy.WithOrigins("https://local.host:7045", "https://local.host:3000").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
                        });
 });
+FirebaseApp.Create(new AppOptions()
+{
+    Credential = GoogleCredential.FromFile("C:\\Users\\DavidVareba\\OneDrive - FreightWise, LLC\\Desktop\\BackEnd\\TheVadanaProperties\\VadanaProperties\\VadanaProperties\\vadanaproperties-firebase-adminsdk-dgv1e-bed8e42209.json"),
+});
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.IncludeErrorDetails = true;
+    options.Authority = "https://securetoken.google.com/vadanaproperties";
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidIssuer = "https://securetoken.google.com/vadanaproperties",
+        ValidateAudience = true,
+        ValidAudience = "vadanaproperties",
+        ValidateLifetime = true,
+    };
+});
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -32,6 +55,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors( builder => { builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin(); });
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
