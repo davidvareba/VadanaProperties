@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { updateContact, createContact } from '../api/data/contactData';
+import { updateContact, createContact } from '../Data/ContactData';
 
 const initialState = {
     description: '',
@@ -13,7 +13,7 @@ const initialState = {
 
 export default function Contact({ obj, userId }) {
     const [formInput, setFormInput] = useState(initialState);
-    const history = useHistory();
+    const history = useNavigate();
 
     useEffect(() => {
         if (obj.firebaseKey) {
@@ -56,19 +56,7 @@ export default function Contact({ obj, userId }) {
     };
     return (
         <form onSubmit={handleSubmit}>
-            <h1 className="form-label visually-hidden">userId {userId}</h1>
-            <div className="m-3">
-                <input
-                    type="text"
-                    className="form-control"
-                    id="car_id"
-                    name="car_id"
-                    placeholder="Enter Car ID"
-                    value={formInput.make}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+            <h1 className="form-label visually-hidden">Contact Us {userId}</h1>
             <div className="m-3">
                 <label htmlFor="model">
                     Description
